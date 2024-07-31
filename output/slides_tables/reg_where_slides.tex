@@ -1,0 +1,33 @@
+\begin{table}[htbp] \footnotesize \centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{l*{5}{c}}
+\toprule
+&\multicolumn{5}{c}{Dep. Var = 1 if $ b $ is offshored in $ d $} \\
+\cmidrule(lr){2-6}
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
+\midrule
+Log Average distance$ _d$&   -0.048\sym{***}&                  &                  &                  &                  \\
+                &  (0.007)         &                  &                  &                  &                  \\
+\addlinespace
+Log GDP/Capita$ _d$&    0.008         &                  &                  &                  &                  \\
+                &  (0.008)         &                  &                  &                  &                  \\
+\addlinespace
+Share of HS workers$ _b$ $\times$ Log GDP/Capita$ _d$&                  &   -0.031         &    0.056         &                  &                  \\
+                &                  &  (0.031)         &  (0.045)         &                  &                  \\
+\addlinespace
+Share of HS workers$ _b$ $\times$ India$ _d$&                  &                  &    0.414\sym{***}&                  &                  \\
+                &                  &                  &  (0.150)         &                  &                  \\
+\addlinespace
+Share of RD workers$ _b$ $\times$ Log GDP/Capita$ _d$&                  &                  &                  &   -0.021         &    0.145\sym{*}  \\
+                &                  &                  &                  &  (0.060)         &  (0.087)         \\
+\addlinespace
+Share of RD workers$ _b$ $\times$ India$ _d$&                  &                  &                  &                  &    0.794\sym{***}\\
+                &                  &                  &                  &                  &  (0.292)         \\
+\midrule
+Average (\%)    &     14.2         &     14.2         &     14.2         &     14.2         &     14.2         \\
+Firm controls   &\checkmark         &\checkmark         &\checkmark         &\checkmark         &\checkmark         \\
+Business function fixed effects&\checkmark         &\checkmark         &\checkmark         &\checkmark         &\checkmark         \\
+Destination fixed effects&                  &\checkmark         &\checkmark         &\checkmark         &\checkmark         \\
+Observations    &    2,250         &    2,250         &    2,250         &    2,250         &    2,250         \\
+\bottomrule \end{tabular}\end{table}

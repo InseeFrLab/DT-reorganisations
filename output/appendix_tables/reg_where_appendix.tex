@@ -1,0 +1,34 @@
+\begin{table}[htbp] \footnotesize \centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Where are business functions offshored? Weighted regressions \label{tab:reg_where_appendix}}
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{l*{5}{c}}
+\toprule
+&\multicolumn{5}{c}{Dep. Var = 1 if $ b $ is offshored in $ d $} \\
+\cmidrule(lr){2-6}
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
+\midrule
+Log Average distance$ _d$&   -0.050\sym{***}&                  &                  &                  &                  \\
+                &  (0.006)         &                  &                  &                  &                  \\
+\addlinespace
+Log GDP/Capita$ _d$&    0.010         &                  &                  &                  &                  \\
+                &  (0.008)         &                  &                  &                  &                  \\
+\addlinespace
+Share of HS workers$ _b$ $\times$ Log GDP/Capita$ _d$&                  &   -0.032         &    0.066         &                  &                  \\
+                &                  &  (0.033)         &  (0.049)         &                  &                  \\
+\addlinespace
+Share of HS workers$ _b$ $\times$ India$ _d$&                  &                  &    0.456\sym{***}&                  &                  \\
+                &                  &                  &  (0.161)         &                  &                  \\
+\addlinespace
+Share of RD workers$ _b$ $\times$ Log GDP/Capita$ _d$&                  &                  &                  &   -0.026         &    0.158\sym{*}  \\
+                &                  &                  &                  &  (0.064)         &  (0.093)         \\
+\addlinespace
+Share of RD workers$ _b$ $\times$ India$ _d$&                  &                  &                  &                  &    0.865\sym{***}\\
+                &                  &                  &                  &                  &  (0.306)         \\
+\midrule
+Average (\%)    &     13.8         &     13.8         &     13.8         &     13.8         &     13.8         \\
+Firm controls   &\checkmark         &\checkmark         &\checkmark         &\checkmark         &\checkmark         \\
+Business function fixed effects&\checkmark         &\checkmark         &\checkmark         &\checkmark         &\checkmark         \\
+Destination fixed effects&                  &\checkmark         &\checkmark         &\checkmark         &\checkmark         \\
+Observations    &    2,250         &    2,250         &    2,250         &    2,250         &    2,250         \\
+\bottomrule \multicolumn{6}{@{}p{\linewidth}@{}}{\footnotesize \emph{Notes:} This table reports average marginal effects of the logit estimation of Equation \ref{eq:reg_where}. Covariates are relative to year 2017. We include one observation per firm $\times$ business function $\times$ destination. Observations are weighted by survey weights. \sym{*} \(p<0.10\) \sym{**} \(p<0.05\) \sym{***} \(p<0.01\)} \end{tabular}\end{table}

@@ -1,0 +1,32 @@
+\begin{table}[htbp] \footnotesize \centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{l*{6}{c}}
+\toprule
+&\multicolumn{6}{c}{Dep. Var = 1 if $ b $ is reorganized within $ f $} \\
+\cmidrule(lr){2-7}
+                &\multicolumn{1}{c}{Offshoring}&\multicolumn{1}{c}{Reshoring}&\multicolumn{1}{c}{Offshoring}&\multicolumn{1}{c}{Reshoring}&\multicolumn{1}{c}{Offshoring}&\multicolumn{1}{c}{Reshoring}\\\cmidrule(lr){2-2}\cmidrule(lr){3-3}\cmidrule(lr){4-4}\cmidrule(lr){5-5}\cmidrule(lr){6-6}\cmidrule(lr){7-7}
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         \\
+\midrule
+(Log) Value added per worker$ _f$&   -0.096\sym{***}&    0.015         &   -0.097\sym{***}&    0.010         &   -0.095\sym{***}&    0.010         \\
+                &  (0.030)         &  (0.025)         &  (0.029)         &  (0.022)         &  (0.029)         &  (0.022)         \\
+\addlinespace
+Core business function$ _{fb}$&    0.202\sym{***}&    0.261\sym{***}&    0.233\sym{***}&    0.188\sym{***}&    0.185\sym{***}&    0.176\sym{***}\\
+                &  (0.021)         &  (0.014)         &  (0.023)         &  (0.016)         &  (0.025)         &  (0.019)         \\
+\addlinespace
+Log $\frac{M}{W}_b$&                  &                  &   -0.013         &    0.180\sym{***}&    0.162\sym{***}&    0.203\sym{***}\\
+                &                  &                  &  (0.035)         &  (0.030)         &  (0.057)         &  (0.039)         \\
+\addlinespace
+Log $\frac{K}{W}_b$&                  &                  &   -0.042\sym{*}  &   -0.088\sym{***}&   -0.057\sym{**} &   -0.082\sym{***}\\
+                &                  &                  &  (0.022)         &  (0.026)         &  (0.024)         &  (0.026)         \\
+\addlinespace
+Share of HS workers$ _b$&                  &                  &                  &                  &   -0.019         &   -0.031         \\
+                &                  &                  &                  &                  &  (0.055)         &  (0.058)         \\
+\addlinespace
+$(\frac{K_{inc}}{K})_b$&                  &                  &                  &                  &    0.623\sym{***}&    0.153         \\
+                &                  &                  &                  &                  &  (0.165)         &  (0.138)         \\
+\midrule
+Average (\%)    &     8.58         &      5.9         &     8.58         &      5.9         &     8.58         &      5.9         \\
+Firm controls   &\checkmark         &\checkmark         &\checkmark         &\checkmark         &\checkmark         &\checkmark         \\
+Observations    &    1,096         &      840         &    1,096         &      840         &    1,096         &      840         \\
+\bottomrule \end{tabular}\end{table}
