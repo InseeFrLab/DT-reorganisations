@@ -12,9 +12,9 @@ gravity_path <- "X:/HAB-CAM-Perim/cam-perim/data/gravity/source/"
 ## Path to store confidential data
 data_path <- "X:/HAB-CAM-Perim/cam-perim/"
 ## Path where the code folder is
-global_path <- "Z:/cam-perim/replication_package/" 
+global_path <- "Z:/reorganisations_replication_package/" 
 ## Path where to store results
-output_path <- "Z:/cam-perim/replication_package/output/" 
+output_path <- "Z:/reorganisations_replication_package/output/" 
 
 setwd(global_path)
 #===============================================================================

@@ -14,42 +14,42 @@ local varlist_to_margins "HS_nb_heures_frac task_HS_frac task_avg_r_cog task_is_
 
 eststo clear
 
-logit DELOC `varlist_task_1'
+logit DELOC `varlist_task_1', vce(cluster entreprise_17)
 eststo: margins, dydx(`varlist_task_1')  post	
 su DELOC
 estadd scalar avg = 100*r(mean)
 
-logit DELOC `varlist_task_2'
+logit DELOC `varlist_task_2', vce(cluster entreprise_17)
 eststo: margins, dydx(`varlist_task_2')  post
 su DELOC
 estadd scalar avg = 100*r(mean)
 
-logit DELOC `varlist_task_3'
+logit DELOC `varlist_task_3', vce(cluster entreprise_17)
 eststo: margins, dydx(`varlist_task_3')  post
 su DELOC
 estadd scalar avg = 100*r(mean)
 
-logit DELOC `varlist_task_4'
+logit DELOC `varlist_task_4', vce(cluster entreprise_17)
 eststo: margins, dydx(`varlist_task_4')  post
 su DELOC
 estadd scalar avg = 100*r(mean)
 
-logit RELOC `varlist_task_1'
+logit RELOC `varlist_task_1', vce(cluster entreprise_17)
 eststo: margins, dydx(HS_nb_heures_frac task_HS_frac)  post
 su RELOC
 estadd scalar avg = 100*r(mean)
 
-logit RELOC `varlist_task_2'
+logit RELOC `varlist_task_2', vce(cluster entreprise_17)
 eststo: margins, dydx(HS_nb_heures_frac task_avg_r_cog)  post
 su RELOC
 estadd scalar avg = 100*r(mean)
 
-logit RELOC `varlist_task_3'
+logit RELOC `varlist_task_3', vce(cluster entreprise_17)
 eststo: margins, dydx(HS_nb_heures_frac task_HS_frac task_avg_r_cog)  post
 su RELOC
 estadd scalar avg = 100*r(mean)
 
-logit RELOC `varlist_task_4'
+logit RELOC `varlist_task_4', vce(cluster entreprise_17)
 eststo: margins, dydx(HS_nb_heures_frac task_HS_frac task_avg_r_cog task_is_core)  post
 su RELOC
 estadd scalar avg = 100*r(mean)
@@ -57,7 +57,7 @@ estadd scalar avg = 100*r(mean)
 estadd local FE_1 "\checkmark": *
 
 ** Paper Table
-local note  "This table reports average marginal effects of the logit estimation of Equation \ref{eq:reg_what}. Covariates are relative to year 2017. We include one observation per firm $\times$ business function. In Columns (5) to (8), because of the industry fixed-effects, we discard the industries in which no reshoring is observed: R\&D, engineering, and business services."
+local note  "This table reports average marginal effects of the logit estimation of Equation \ref{eq:reg_what}. Covariates are relative to year 2017. We include one observation per firm $\times$ business function. Standard errors clustered at the firm-level. In Columns (5) to (8), because of the industry fixed-effects, we discard the industries in which no reshoring is observed: R\&D, engineering, and business services."
 local title "What is reorganized?"
 local label_table "reg_what_paper" 
 
@@ -93,10 +93,10 @@ star(* 0.10 ** 0.05 *** 0.01) substitute("\_ _")
 ************** Plot fixed effects
 local varlist_task_4 "`varlist_firm' TASK_2 TASK_3 TASK_4 TASK_5 TASK_6 TASK_7 TASK_8"
 
-logit DELOC `varlist_task_4'
+logit DELOC `varlist_task_4', vce(cluster entreprise_17)
 eststo mdeloc: margins, dydx(`varlist_task_4')  post
 
-logit RELOC `varlist_task_4'
+logit RELOC `varlist_task_4', vce(cluster entreprise_17)
 eststo mreloc: margins, dydx(`varlist_task_4')  post
 
 coefplot (mdeloc, label(Offhsoring)) (mreloc, label(Reshoring)), keep(TASK_2 TASK_3 TASK_4 TASK_5 TASK_6 TASK_7 TASK_8) xlabel(, labsize(medium)) ylabel(, labsize(medium)) xline(0) legend(ring(0) pos(3) col(1)) xtitle("Average marginal effect")
