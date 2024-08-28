@@ -8,7 +8,10 @@ global output_path "Z:/reorganisations_replication_package/output"
 set scheme plotplainblind
 set more off
 
+* Convert regressions datasets to Stata-friendly datasets
 do "$code_path/2_0_0_prepare_regdata.do"
+
+* Results of the paper
 do "$code_path/2_2_5_Table_5.do"
 do "$code_path/2_2_6_Table_6.do"
 do "$code_path/2_2_7_Table_7.do"

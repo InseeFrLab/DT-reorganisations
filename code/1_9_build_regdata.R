@@ -3,7 +3,7 @@
 #===============================================================================
 
 
-# Input data and formating -----------------------------------------------------
+# Input data and formatting -----------------------------------------------------
 table_regression <- read_rds(paste0(data_path, "out/2_final/cam_augmented.rds"))
 
 ## Restrict sample to usable observations --------------------------------------
