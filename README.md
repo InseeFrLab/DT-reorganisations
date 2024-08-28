@@ -39,7 +39,13 @@ global_path <- ""
 output_path <- "" 
 
 ```
+- Copier-coller le code ci-dessous dans un fichier `_stata_setup.do`, avec les mêmes chemins que ceux spécifiés dans le `R.environ`, et l'exécuter:
+```
+global data_path ""
+global code_path ""
+global output_path ""
 
+```
 - Exécuter `0_master.R` pour créer les fichiers de données et les tables descriptives (Tables 1 à 4)
 - Avec Stata, exécuter `0_master.do` pour construire les fichiers de régressions et tous les résultats du papier (Figures 1 à 3, Tables 5 à 8, S2 à S6).
 

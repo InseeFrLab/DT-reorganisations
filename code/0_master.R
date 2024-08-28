@@ -20,7 +20,7 @@ global_path <- Sys.getenv("global_path")
 setwd(global_path)
 
 ## Where to store output
-output_path <- paste0(global_path, "/output/")
+output_path <- Sys.getenv("output_path")
 
 #===============================================================================
 # load packages
