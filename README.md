@@ -17,7 +17,7 @@ Codes pour répliquer les résultats du Document de travail n 2024-XXX "Reorgani
 ## Utilisation
 Pour reproduire les résultats du document de travail:
 - Ouvrir le projet `reorganisations_replication_package.Rproj` dans `Rstudio`
-- Installer les librairies dans le fichier `DESCRIPTION.md`:
+- Installer les librairies spécifiées dans le fichier `DESCRIPTION.md`:
 ```R
 remotes::install_deps(".")
 ```
