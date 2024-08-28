@@ -19,12 +19,14 @@ Codes pour répliquer les résultats du Document de travail n 2024-XXX "Reorgani
 Pour reproduire les résultats du document de travail:
 - ouvrir le projet `reorganisations_replication_package.Rproj` dans `Rstudio`
 - installer les librairies dans le fichier `DESCRIPTION.md`:
-<html>
-<head>
+```R
 remotes::install_deps(".")
-</head>
-</html>
+```
+
 - copier-coller le code ci-dessous dans un fichier `.Renviron`, en remplissant entre les guillemets les chemins vers les dossiers contenant les différentes données:
+```
+
+```
 
 - Exécuter `0_master.R` pour créer les fichiers de données
 - Avec Stata, exécuter `0_master.do` pour construire les fichiers de régressions et tous les résultats du papier.
