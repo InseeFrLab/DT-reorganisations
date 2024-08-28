@@ -41,8 +41,11 @@ output_path <- ""
 ```
 - Copier-coller le code ci-dessous dans un fichier `_stata_setup.do`, avec les mêmes chemins que ceux spécifiés dans le `R.environ`, et l'exécuter:
 ```
+# Path with the working data
 global data_path ""
+# Path of the code folder
 global code_path ""
+# Path to store results
 global output_path ""
 
 ```
