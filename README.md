@@ -11,5 +11,17 @@ Codes pour répliquer les résultats du Document de travail n 2024-XXX "Reorgani
   - Liaisons financières des entreprises LiFi (Insee) ([Description](https://www.insee.fr/fr/metadonnees/source/serie/s1038), [Données](https://www.casd.eu/source/liaisons-financieres-entre-societes/))
 - Répertoire d'entreprises SIRUS, indisponible via le comité du secret ([Description](https://www.insee.fr/fr/metadonnees/source/serie/s1024))
 - Données publiques:
-  - Distances et PIB par habitant issus de la base Gravity du CEPII (https://www.cepii.fr/CEPII/fr/bdd_modele/bdd_modele_item.asp?id=8)
+  - Distances et PIB par habitant issus de la base Gravity du CEPII ([Description et données](https://www.cepii.fr/CEPII/fr/bdd_modele/bdd_modele_item.asp?id=8))
   - Indices de tâches routinières de Le Barbanchon et Rizzotti 2020 ([Github avec les données](https://github.com/tlebarbanchon/occupations), [Papier](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3653262))
+
+
+## Utilisation
+Pour reproduire les résultats du document de travail:
+- ouvrir le projet `reorganisations_replication_package.Rproj` dans `Rstudio`
+- installer les librairies dans le fichier `DESCRIPTION.md`
+- copier-coller le code ci-dessous dans un fichier `.Renviron`, en remplissant entre les guillemets les chemins vers les dossiers contenant les différentes données:
+
+- Exécuter `0_master.R` pour créer les fichiers de données
+- Avec Stata, exécuter `0_master.do` pour construire les fichiers de régressions et tous les résultats du papier.
+
+- La partie qui historicise les entreprises profilées est le code `1_6_1_build_contour_17.R`.
