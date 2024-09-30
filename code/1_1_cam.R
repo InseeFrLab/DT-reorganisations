@@ -29,7 +29,7 @@ base_cam_cleaned<-subset(base_cam_cleaned,select=c("SIRUS_ID","NUMPOIDS","TYPE_S
                                                    "DELOC_AUTRE_UE14","DELOC_AUTRE_UE13","DELOC_AUTRE_UK","DELOC_AUTRE_EUR","DELOC_AUTRE_CHINE","DELOC_AUTRE_INDE","DELOC_AUTRE_ASIE","DELOC_AUTRE_USA","DELOC_AUTRE_AMERIQ","DELOC_AUTRE_MAGHREB","DELOC_AUTRE_AFRIQUE","DELOC_AUTRE_SO","DELOC_AUTRE_NSP",
                                                    
                                                    "DELOC_AVT2018", "DELOC_ST",
-                                                  
+                                                   
                                                    "RELOC",
                                                    "RELOC_IND","RELOC_CONS","RELOC_TRP","RELOC_COM","RELOC_SI","RELOC_ADMIN","RELOC_ING","RELOC_RD","RELOC_AUTRE",
                                                    "RELOC_IND_GRP", "RELOC_IND_INDEP", 

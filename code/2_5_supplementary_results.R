@@ -1,16 +1,3 @@
-
-# Aggregate number of offshorings and reshorings, weighted ------------------
-
-regdata_who <- haven::read_dta(paste0(data_path, "out/1_intermediary/regdata_who.dta"))
-
-boundary_changes <- regdata_who %>%
-  filter(DELOC!=4 & RELOC!= 4 & keep == 1) %>%
-  summarise(at_least_one =  weighted.mean(DELOC==1 | RELOC == 1, NUMPOIDS, na.rm=TRUE),
-             Offshoring =  weighted.mean(DELOC==1, NUMPOIDS, na.rm=TRUE),
-            Reshoring =  weighted.mean(RELOC==1, NUMPOIDS, na.rm=TRUE),
-            Both = weighted.mean(DELOC==1 & RELOC==1, NUMPOIDS, na.rm=TRUE))
-boundary_changes
-
 # Share of manufacturing firms ---------------------------------------------------------------------
 
 regdata_who <- haven::read_dta(paste0(data_path, "out/1_intermediary/regdata_who.dta"))

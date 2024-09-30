@@ -241,3 +241,96 @@ regdata_where <- regdata_where %>%
 ## Save as .dta ----------------------------------------------------------------
 regdata_where <- regdata_where %>% select_if(~!is.list(.))
 haven::write_dta(regdata_where, path = paste0(data_path, "out/1_intermediary/regdata_where.dta "))
+
+
+# Create similar datasets for the survey data ----------------------------------
+cam_5 <- readRDS(paste0(cam_path, "cam_5.rds")) %>% filter(EXPLOI=="TRUE")
+
+cores <- c("IND", "CONS", "TRP", "COM", "SI", "ADMIN", "ING", "RD", "AUTRE")
+
+deloc_vars <- paste0("DELOC_", cores)
+deloc_grp_vars <- paste0("DELOC_", cores, "_GRP")
+deloc_indep_vars <- paste0("DELOC_", cores, "_INDEP")
+reloc_vars <- paste0("RELOC_", cores)
+reloc_grp_vars <- paste0("RELOC_", cores, "_GRP")
+reloc_indep_vars <- paste0("RELOC_", cores, "_INDEP")
+
+cam_5 <- cam_5 %>%
+  mutate(DELOC= ifelse(DELOC == 1, 1, 0),
+         RELOC= ifelse(RELOC == 1, 1, 0),
+         
+         DELOC_INTRA = ifelse(across(all_of(deloc_grp_vars), ~ .x == 1) %>% rowSums() > 0, 1, 0),
+         DELOC_EXTRA = ifelse(across(all_of(deloc_indep_vars), ~ .x == 1) %>% rowSums() > 0, 1, 0),
+         RELOC_INTRA = ifelse(across(all_of(reloc_grp_vars), ~ .x == 1) %>% rowSums() > 0, 1, 0),
+         RELOC_EXTRA = ifelse(across(all_of(reloc_indep_vars), ~ .x == 1) %>% rowSums() > 0, 1, 0)
+  )
+cam_5 <- cam_5 %>% select(c(DELOC, RELOC, DELOC_INTRA, DELOC_EXTRA, RELOC_INTRA, RELOC_EXTRA, NUMPOIDS, deloc_vars, deloc_grp_vars, deloc_indep_vars, reloc_vars, reloc_grp_vars, reloc_indep_vars, "SIRUS_ID"))
+# Who --------------------------------------------------------------------------
+regdata_who_survey <- cam_5 %>% select_if(~!is.list(.))
+haven::write_dta(regdata_who_survey, path = paste0(data_path, "out/1_intermediary/regdata_who_survey.dta"))
+
+# What --------------------------------------------------------------------------
+table_long_deloc <- reshape(cam_5%>%
+                              select(c("DELOC_IND","DELOC_TRP", "DELOC_COM", "DELOC_SI","DELOC_ADMIN", "DELOC_ING", "DELOC_RD", "DELOC_AUTRE","SIRUS_ID")) %>%
+                              mutate_at(vars(-SIRUS_ID),funs(case_when(is.na(.) ~ 0, .==1 ~ 1, .==2 ~ 1, .==3 ~ 0,.==0 ~ 0 ))), 
+                            direction="long", 
+                            varying=c("DELOC_IND","DELOC_TRP", "DELOC_COM", "DELOC_SI","DELOC_ADMIN", "DELOC_ING", "DELOC_RD", "DELOC_AUTRE"),sep="_") %>% 
+  select(-id)
+
+
+
+table_long_deloc_grp <- reshape(cam_5%>%
+                                  select(c("DELOC_IND_GRP","DELOC_TRP_GRP", "DELOC_COM_GRP", "DELOC_SI_GRP","DELOC_ADMIN_GRP", "DELOC_ING_GRP", "DELOC_RD_GRP", "DELOC_AUTRE_GRP","SIRUS_ID")) %>%
+                                  rename_with(~str_remove(., '_GRP'))%>%
+                                  mutate_at(vars(-SIRUS_ID),funs(case_when(is.na(.) ~ 0, .==1 ~ 1, .==".o"~0,.==0 ~ 0 ))), 
+                                direction="long", 
+                                varying=c("DELOC_IND","DELOC_TRP", "DELOC_COM", "DELOC_SI","DELOC_ADMIN", "DELOC_ING", "DELOC_RD", "DELOC_AUTRE"),sep="_") %>%
+  rename("DELOC_INTRA"="DELOC") %>% select(-id)
+
+
+
+table_long_deloc_indep <- reshape(cam_5%>%
+                                    select(c("DELOC_IND_INDEP","DELOC_TRP_INDEP", "DELOC_COM_INDEP", "DELOC_SI_INDEP","DELOC_ADMIN_INDEP", "DELOC_ING_INDEP", "DELOC_RD_INDEP", "DELOC_AUTRE_INDEP","SIRUS_ID")) %>%
+                                    rename_with(~str_remove(., '_INDEP'))%>%
+                                    mutate_at(vars(-SIRUS_ID),funs(case_when(is.na(.) ~ 0, .==1 ~ 1, .==".o"~0,.==0 ~ 0 ))), 
+                                  direction="long", 
+                                  varying=c("DELOC_IND","DELOC_TRP", "DELOC_COM", "DELOC_SI","DELOC_ADMIN", "DELOC_ING", "DELOC_RD", "DELOC_AUTRE"),sep="_") %>% 
+  rename("DELOC_EXTRA"="DELOC") %>% select(-id)
+
+table_long_reloc <- reshape(cam_5%>%
+                              select(c("RELOC_IND","RELOC_TRP", "RELOC_COM", "RELOC_SI","RELOC_ADMIN", "RELOC_ING", "RELOC_RD", "RELOC_AUTRE","SIRUS_ID"))%>%
+                              mutate_at(vars(-SIRUS_ID),funs(case_when(is.na(.) ~ 0, .==1 ~ 1, .==2 ~ 1, .==3 ~ 0,.==0 ~ 0 ))), 
+                            direction="long", 
+                            varying=c("RELOC_IND","RELOC_TRP", "RELOC_COM", "RELOC_SI","RELOC_ADMIN", "RELOC_ING", "RELOC_RD", "RELOC_AUTRE"),sep="_") %>% 
+  select(-id)
+
+table_long_reloc_grp <- reshape(cam_5%>%
+                                  select(c("RELOC_IND_GRP","RELOC_TRP_GRP", "RELOC_COM_GRP", "RELOC_SI_GRP","RELOC_ADMIN_GRP", "RELOC_ING_GRP", "RELOC_RD_GRP", "RELOC_AUTRE_GRP","SIRUS_ID")) %>%
+                                  rename_with(~str_remove(., '_GRP'))%>%
+                                  mutate_at(vars(-SIRUS_ID),funs(case_when(is.na(.) ~ 0, .==1 ~ 1, .==".o"~0,.==0 ~ 0 ))), 
+                                direction="long", 
+                                varying=c("RELOC_IND","RELOC_TRP", "RELOC_COM", "RELOC_SI","RELOC_ADMIN", "RELOC_ING", "RELOC_RD", "RELOC_AUTRE"),sep="_") %>%
+  rename("RELOC_INTRA"="RELOC") %>% select(-id)
+
+
+table_long_reloc_indep <- reshape(cam_5%>%
+                                    select(c("RELOC_IND_INDEP","RELOC_TRP_INDEP", "RELOC_COM_INDEP", "RELOC_SI_INDEP","RELOC_ADMIN_INDEP", "RELOC_ING_INDEP", "RELOC_RD_INDEP", "RELOC_AUTRE_INDEP","SIRUS_ID")) %>%
+                                    rename_with(~str_remove(., '_INDEP'))%>%
+                                    mutate_at(vars(-SIRUS_ID),funs(case_when(is.na(.) ~ 0, .==1 ~ 1, .==".o"~0,.==0 ~ 0 ))), 
+                                  direction="long", 
+                                  varying=c("RELOC_IND","RELOC_TRP", "RELOC_COM", "RELOC_SI","RELOC_ADMIN", "RELOC_ING", "RELOC_RD", "RELOC_AUTRE"),sep="_") %>% 
+  rename("RELOC_EXTRA"="RELOC") %>% select(-id)
+
+
+table_deloc_reloc <- merge(merge(merge(merge(merge(table_long_deloc, table_long_deloc_grp, by=c("SIRUS_ID", "time"))
+                                             , table_long_deloc_indep, by=c("SIRUS_ID", "time"))
+                                       , table_long_reloc, by=c("SIRUS_ID", "time"))
+                                 , table_long_reloc_grp, by=c("SIRUS_ID", "time"))
+                           , table_long_reloc_indep, by=c("SIRUS_ID", "time")) %>%
+  rename("task"="time")
+
+regdata_what_survey <- merge(cam_5 %>% select(-c("DELOC", "DELOC_INTRA", "DELOC_EXTRA", "RELOC", "RELOC_INTRA", "RELOC_EXTRA")), table_deloc_reloc, by="SIRUS_ID", all.x= TRUE)
+
+## Save as .dta ----------------------------------------------------------------
+regdata_what_survey <- regdata_what_survey %>% select_if(~!is.list(.))
+haven::write_dta(regdata_what_survey, path = paste0(data_path, "out/1_intermediary/regdata_what_survey.dta"))
