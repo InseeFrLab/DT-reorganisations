@@ -50,6 +50,7 @@ source("code/1_8_destination_data.R")
 source("code/1_9_build_regdata.R")
 
 # Descriptive tables
+source("code/2_4_1_Appendix_Table_1.R")
 source("code/2_2_1_Table_1.R")
 source("code/2_2_2_Table_2.R")
 source("code/2_2_3_Table_3.R")
