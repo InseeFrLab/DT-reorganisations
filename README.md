@@ -1,6 +1,6 @@
 # Reorganizing global supply-chains: Who, What, How, and Where?
 
-Codes pour répliquer les résultats du Document de travail n 2024-XXX "Reorganizing global supply-chains: Who, What, How, and Where", par Gabriel Baratte, Raphaël Lafrogne-Joussier, Lionel Fontagné
+Codes pour répliquer les résultats du Document de travail n 2024-24 "Réorganisation des chaînes d’approvisionnement mondiales : qui, quoi, comment et où", par Gabriel Baratte, Raphaël Lafrogne-Joussier, Lionel Fontagné
 
 ## Données
 - Données confidentielles accessibles via une demande au comité du secret:
