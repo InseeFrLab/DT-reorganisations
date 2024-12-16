@@ -3,7 +3,7 @@
 [![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/InseeFrLab/DT-reorganisations/blob/main/README.md)
 [![fr](https://img.shields.io/badge/lang-fr-green.svg)](https://github.com/InseeFrLab/DT-reorganisations/blob/main/README.fr.md)
 
-Codes to replicate the results of Working Paper n 2024-24 ‘Reorganisation of global supply chains: who, what, how and where’, by Gabriel Baratte, Raphaël Lafrogne-Joussier, Lionel Fontagné
+Codes to replicate the results of [Working Paper n 2024-24 ‘Reorganisation of global supply chains: who, what, how and where’](https://www.insee.fr/fr/statistiques/8286407), by Gabriel Baratte, Raphaël Lafrogne-Joussier, Lionel Fontagné
 
 ## Data
 - Confidential data accessible on the [CASD](https://www.casd.eu/en/) via a request to the [secrecy committee](https://www.comite-du-secret.fr/home/):
