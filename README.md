@@ -1,7 +1,7 @@
 # Reorganizing global supply-chains: Who, What, How, and Where?
 
-[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/InseeFrLab/DT-reorganisations/README.md)
-[![fr](https://img.shields.io/badge/lang-fr-green.svg)](https://github.com/InseeFrLab/DT-reorganisations/README.fr.md)
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/InseeFrLab/DT-reorganisations/blob/main/README.md)
+[![fr](https://img.shields.io/badge/lang-fr-green.svg)](https://github.com/InseeFrLab/DT-reorganisations/blob/main/README.fr.md)
 
 Codes to replicate the results of Working Paper n 2024-24 ‘Reorganisation of global supply chains: who, what, how and where’, by Gabriel Baratte, Raphaël Lafrogne-Joussier, Lionel Fontagné
 
