@@ -1,7 +1,7 @@
 # Reorganizing global supply-chains: Who, What, How, and Where?
-
+https://github.com/InseeFrLab/DT-reorganisations/blob/main/README.fr.md
 [![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/InseeFrLab/DT-reorganisations/README.md)
-[![fr](https://img.shields.io/badge/lang-fr-green.svg)](https://github.com/InseeFrLab/DT-reorganisations/README.fr.md)
+[![fr](https://img.shields.io/badge/lang-fr-green.svg)](https://github.com/InseeFrLab/DT-reorganisations/blob/main/README.fr.md)
 
 Codes pour répliquer les résultats du Document de travail n 2024-24 "Réorganisation des chaînes d’approvisionnement mondiales : qui, quoi, comment et où", par Gabriel Baratte, Raphaël Lafrogne-Joussier, Lionel Fontagné
 
