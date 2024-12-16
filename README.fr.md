@@ -3,7 +3,7 @@
 [![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/InseeFrLab/DT-reorganisations/blob/main/README.md)
 [![fr](https://img.shields.io/badge/lang-fr-green.svg)](https://github.com/InseeFrLab/DT-reorganisations/blob/main/README.fr.md)
 
-Codes pour répliquer les résultats du Document de travail n 2024-24 "Réorganisation des chaînes d’approvisionnement mondiales : qui, quoi, comment et où", par Gabriel Baratte, Raphaël Lafrogne-Joussier, Lionel Fontagné
+Codes pour répliquer les résultats du [Document de travail n 2024-24 "Réorganisation des chaînes d’approvisionnement mondiales : qui, quoi, comment et où"](https://www.insee.fr/fr/statistiques/8286407), par Gabriel Baratte, Raphaël Lafrogne-Joussier, Lionel Fontagné
 
 ## Données
 - Données confidentielles accessibles sur le [CASD](https://www.casd.eu/) via une demande au [comité du secret](https://www.comite-du-secret.fr):
