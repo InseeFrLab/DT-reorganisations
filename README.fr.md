@@ -6,7 +6,7 @@
 Codes pour répliquer les résultats du Document de travail n 2024-24 "Réorganisation des chaînes d’approvisionnement mondiales : qui, quoi, comment et où", par Gabriel Baratte, Raphaël Lafrogne-Joussier, Lionel Fontagné
 
 ## Données
-- Données confidentielles accessibles via une demande au comité du secret:
+- Données confidentielles accessibles sur le [CASD](https://www.casd.eu/) via une demande au [comité du secret](https://www.comite-du-secret.fr):
   - Enquête CAM 2020 (Insee) ([Description](https://www.insee.fr/fr/metadonnees/source/operation/s2038/presentation))
   - Statistiques annuelles d'entreprises Ésane-FARE (Insee) ([Description](https://www.insee.fr/fr/metadonnees/source/serie/s1188), [Données](https://www.casd.eu/source/statistique-structurelle-annuelle-dentreprises-issue-du-dispositif-esane/))
   - Base tous salariés (anciennement DADS, Insee) ([Description](https://www.insee.fr/fr/metadonnees/source/serie/s1998), [Données](https://www.casd.eu/source/base-tous-salaries-fichier-etablissements/))
@@ -52,7 +52,7 @@ global code_path ""
 global output_path ""
 
 ```
-- Exécuter `0_master.R` pour créer les fichiers de données et les tables descriptives (Tables 1 à 4)
-- Avec Stata, exécuter `0_master.do` pour construire les fichiers de régressions et tous les résultats du papier (Figures 1 à 3, Tables 5 à 8, S2 à S6).
+- Exécuter `0_master.R` pour créer les fichiers de données et les tables descriptives (Tables 2 à 5)
+- Avec Stata, exécuter `0_master.do` pour construire les fichiers de régressions et tous les résultats du papier (Figures 1 à 3, Tables 6 à 9, S2 à S6).
 
 - Le code qui historicise les entreprises profilées est `1_6_1_build_contour_17.R`.

@@ -3,29 +3,29 @@
 [![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/InseeFrLab/DT-reorganisations/README.md)
 [![fr](https://img.shields.io/badge/lang-fr-green.svg)](https://github.com/InseeFrLab/DT-reorganisations/README.fr.md)
 
-Codes pour répliquer les résultats du Document de travail n 2024-24 "Réorganisation des chaînes d’approvisionnement mondiales : qui, quoi, comment et où", par Gabriel Baratte, Raphaël Lafrogne-Joussier, Lionel Fontagné
+Codes to replicate the results of Working Paper n 2024-24 ‘Reorganisation of global supply chains: who, what, how and where’, by Gabriel Baratte, Raphaël Lafrogne-Joussier, Lionel Fontagné
 
-## Données
-- Données confidentielles accessibles via une demande au comité du secret:
-  - Enquête CAM 2020 (Insee) ([Description](https://www.insee.fr/fr/metadonnees/source/operation/s2038/presentation))
-  - Statistiques annuelles d'entreprises Ésane-FARE (Insee) ([Description](https://www.insee.fr/fr/metadonnees/source/serie/s1188), [Données](https://www.casd.eu/source/statistique-structurelle-annuelle-dentreprises-issue-du-dispositif-esane/))
-  - Base tous salariés (anciennement DADS, Insee) ([Description](https://www.insee.fr/fr/metadonnees/source/serie/s1998), [Données](https://www.casd.eu/source/base-tous-salaries-fichier-etablissements/))
-  - Contour des entreprises profilées (Insee) ([Données](https://www.casd.eu/source/contour-des-entreprises-profilees/))
-- Répertoire d'entreprises SIRUS, indisponible via le comité du secret ([Description](https://www.insee.fr/fr/metadonnees/source/serie/s1024))
-- Données publiques:
-  - Distances et PIB par habitant issus de la base Gravity du CEPII ([Description et données](https://www.cepii.fr/CEPII/fr/bdd_modele/bdd_modele_item.asp?id=8))
-  - Indices de tâches routinières de Le Barbanchon et Rizzotti 2020 ([Github avec les données](https://github.com/tlebarbanchon/occupations), [Papier](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3653262))
+## Data
+- Confidential data accessible on the [CASD](https://www.casd.eu/en/) via a request to the [secrecy committee](https://www.comite-du-secret.fr/home/):
+  - CAM 2020 survey (Insee) ([Description](https://www.insee.fr/fr/metadonnees/source/operation/s2038/presentation))
+  - Annual business statistics Ésane-FARE (Insee) ([Description](https://www.insee.fr/fr/metadonnees/source/serie/s1188), [Data](https://www.casd.eu/source/statistique-structurelle-annuelle-dentreprises-issue-du-dispositif-esane/))
+  - Base tous salariés (formerly DADS, Insee) ([Description](https://www.insee.fr/fr/metadonnees/source/serie/s1998), [Data](https://www.casd.eu/source/base-tous-salaries-fichier-etablissements/))
+  - Contour of profiled companies (Insee) ([Data](https://www.casd.eu/source/contour-des-entreprises-profilees/))
+- SIRUS business directory, unavailable via the secrecy committee ([Description](https://www.insee.fr/fr/metadonnees/source/serie/s1024))
+- Public data:
+  - Distances and GDP per capita from CEPII's Gravity database ([Description and data](https://www.cepii.fr/CEPII/fr/bdd_modele/bdd_modele_item.asp?id=8))
+  - Indices of routine tasks from Le Barbanchon and Rizzotti 2020 ([Github with data](https://github.com/tlebarbanchon/occupations), [Paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3653262))
 
 
-## Utilisation
-Pour reproduire les résultats du document de travail:
-- Ouvrir le projet `reorganisations_replication_package.Rproj` dans `Rstudio`
-- Installer les librairies spécifiées dans le fichier `DESCRIPTION.md`:
+## Use
+To reproduce the results of the working paper
+- Open the project `reorganisations_replication_package.Rproj` in `Rstudio`.
+- Install the libraries specified in the `DESCRIPTION.md` file:
 ```R
 remotes::install_deps(".")
 ```
 
-- Copier-coller le code ci-dessous dans un fichier `.Renviron`, en remplissant entre les guillemets les chemins vers les dossiers contenant les différentes données:
+- Copy and paste the code below into a `.Renviron' file, enclosing the paths to the folders containing the various data in inverted commas:
 ```
 ## Data paths
 cam_path <- ""
@@ -42,7 +42,7 @@ global_path <- ""
 output_path <- "" 
 
 ```
-- Copier-coller le code ci-dessous dans un fichier `_stata_setup.do`, avec les mêmes chemins que ceux spécifiés dans le `R.environ`, et l'exécuter:
+- Copy and paste the code below into a `_stata_setup.do` file, with the same paths as specified in the `R.environ`, and run it:
 ```
 # Path with the working data
 global data_path ""
@@ -52,7 +52,7 @@ global code_path ""
 global output_path ""
 
 ```
-- Exécuter `0_master.R` pour créer les fichiers de données et les tables descriptives (Tables 1 à 4)
-- Avec Stata, exécuter `0_master.do` pour construire les fichiers de régressions et tous les résultats du papier (Figures 1 à 3, Tables 5 à 8, S2 à S6).
+- Run `0_master.R` to create the data files and descriptive tables (Tables 2 to 5)
+- With Stata, run `0_master.do` to build the regression files and all the results of the paper (Figures 1 to 3, Tables 6 to 9, S2 to S6).
 
-- Le code qui historicise les entreprises profilées est `1_6_1_build_contour_17.R`.
+- The code that historicises the profiled companies is `1_6_1_build_contour_17.R`.
