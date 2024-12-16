@@ -1,5 +1,5 @@
 # Reorganizing global supply-chains: Who, What, How, and Where?
-https://github.com/InseeFrLab/DT-reorganisations/blob/main/README.fr.md
+
 [![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/InseeFrLab/DT-reorganisations/blob/main/README.md)
 [![fr](https://img.shields.io/badge/lang-fr-green.svg)](https://github.com/InseeFrLab/DT-reorganisations/blob/main/README.fr.md)
 
